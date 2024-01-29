@@ -6,6 +6,8 @@ import {
     Tooltip,
     Box,
   } from "@mui/material";
+  import { Favorite } from "@mui/icons-material";
+  import { houseStore } from "../stores/HouseStore";
   
   export interface HouseCardProps {
     title: string;
@@ -15,6 +17,10 @@ import {
   }
   
   export function HouseCard({ id, name, region, founded, coatOfArms }) {
+    const addToFavorites = () => {
+      const card = { id, name, region, founded, coatOfArms };
+      houseStore.addToFavorites(card);
+    };
   
     return (
       <Card sx={{ minWidth: 275, height: "100%" }}>
@@ -70,6 +76,7 @@ import {
                     color: "#FFF",
                   },
                 }}
+                onClick={addToFavorites}
               >
                 <Favorite />
               </Button>

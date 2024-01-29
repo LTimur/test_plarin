@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 class HouseStore {
   cards = [];
+  favorites = [];
 
   constructor() {
     makeAutoObservable(this);
@@ -12,6 +13,13 @@ class HouseStore {
       ...card,
       id: card.url.split("/").pop(),
     }));
+  }
+
+  addToFavorites(card) {
+    const existingCard = this.favorites.find((c) => c.id === card.id);
+    if (!existingCard) {
+      this.favorites.push(card);
+    }
   }
 }
 
