@@ -63,3 +63,4 @@ To run this project locally, follow these steps:
 ## Deployment 
 
 Game of Thrones Encyclopedia application is live and hosted on [Netlify](https://www.netlify.com/). You can access it by visiting https://testplaringot.netlify.app/.
+ 
