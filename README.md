@@ -1,6 +1,6 @@
 # Game of Thrones Encyclopedia
 
-Welcome to the Game of Thrones Encyclopedia, a React application that serves as a comprehensive guide to the famous TV series Game of Thrones. This application allows you to explore information about the various houses in the GOT universe, with features to view details and mark favorites. Data is downloaded using [An API of Ice And Fire](https://anapioficeandfire.com/){:target="_blank"}.
+Welcome to the Game of Thrones Encyclopedia, a React application that serves as a comprehensive guide to the famous TV series Game of Thrones. This application allows you to explore information about the various houses in the GOT universe, with features to view details and mark favorites. Data is downloaded using [An API of Ice And Fire](https://anapioficeandfire.com/).
 
 ## Features
 
@@ -14,12 +14,12 @@ Welcome to the Game of Thrones Encyclopedia, a React application that serves as 
   
 ## Technologies
 
-- **[React](https://react.dev/){:target="_blank"}**: A popular JavaScript library for building user interfaces.
-- **[TypeScript](https://www.typescriptlang.org/){:target="_blank"}**: A statically typed superset of JavaScript for improved code quality and tooling.
-- **[Vite](https://vitejs.dev/){:target="_blank"}**: A fast build tool and development environment for modern web apps.
-- **[Mobx](https://mobx.js.org/){:target="_blank"}**: A state management library for handling application state.
-- **[Axios](https://axios-http.com/){:target="_blank"}**: A library for making HTTP requests to the API.
-- **[Material-UI](https://mui.com/){:target="_blank"}**: A React component library for designing modern and responsive UIs.
+- **[React](https://react.dev/)**: A popular JavaScript library for building user interfaces.
+- **[TypeScript](https://www.typescriptlang.org/)**: A statically typed superset of JavaScript for improved code quality and tooling.
+- **[Vite](https://vitejs.dev/)**: A fast build tool and development environment for modern web apps.
+- **[Mobx](https://mobx.js.org/)**: A state management library for handling application state.
+- **[Axios](https://axios-http.com/)**: A library for making HTTP requests to the API.
+- **[Material-UI](https://mui.com/)**: A React component library for designing modern and responsive UIs.
   
 ## Getting Started
 
@@ -62,4 +62,4 @@ To run this project locally, follow these steps:
 
 ## Deployment 
 
-Game of Thrones Encyclopedia application is live and hosted on [Netlify](https://www.netlify.com/){:target="_blank"}. You can access it by visiting https://testplaringot.netlify.app/.
+Game of Thrones Encyclopedia application is live and hosted on [Netlify](https://www.netlify.com/). You can access it by visiting https://testplaringot.netlify.app/.
