@@ -19,8 +19,6 @@ export const Favorites = observer(() => {
     indexOfLastCard
   );
 
-  console.log(houseStore.favorites)
-
   return (
     <Container maxWidth="lg" style={{ textAlign: "center" }}>
       <Grid container spacing={2} justifyContent="center">
