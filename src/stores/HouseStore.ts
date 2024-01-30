@@ -7,6 +7,7 @@ class HouseStore {
 
   constructor() {
     makeAutoObservable(this);
+    this.loadFavoritesFromLocalStorage();
   }
 
   setCards(cards) {
@@ -15,7 +16,7 @@ class HouseStore {
         .map((card) => ({
           ...card,
           id: card.url.split("/").pop(),
-          isFavorite: false,
+          isFavorite: this.isFavorite(card.url.split("/").pop()),
         }))
         .filter(
           (card, index, self) =>
@@ -29,6 +30,7 @@ class HouseStore {
     if (!existingCard) {
       runInAction(() => {
         this.favorites.push(card);
+        this.saveFavoritesToLocalStorage();
       });
     }
   }
@@ -51,7 +53,23 @@ class HouseStore {
   removeFromFavorites(id) {
     const index = this.favorites.findIndex((card) => card.id === id);
     if (index !== -1) {
-      this.favorites.splice(index, 1);
+      runInAction(() => {
+        this.favorites.splice(index, 1);
+        this.saveFavoritesToLocalStorage();
+      });
+    }
+  }
+
+  saveFavoritesToLocalStorage() {
+    localStorage.setItem("favorites", JSON.stringify(this.favorites));
+  }
+
+  loadFavoritesFromLocalStorage() {
+    const favorites = localStorage.getItem("favorites");
+    if (favorites) {
+      runInAction(() => {
+        this.favorites = JSON.parse(favorites);
+      });
     }
   }
 }
