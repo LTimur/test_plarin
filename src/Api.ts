@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ReceivedHouseTypes } from "./entities/ReceivedHouseTypes";
+import { ReceivedHouseTypes } from "./entities/ReceivedHouse";
 
 const baseUrl = "https://anapioficeandfire.com/api";
 const housesUrl = `${baseUrl}/houses`;

@@ -9,7 +9,7 @@ import {
 import { Star } from "@mui/icons-material";
 import { houseStore } from "../stores/HouseStore";
 import { useState } from "react";
-import { HouseCardTypes } from "../entities/HouseCardTypes";
+import { HouseCardTypes } from "../entities/House";
 
 export function HouseCard({
   id,

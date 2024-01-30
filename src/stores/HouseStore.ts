@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { FavoriteCardTypes } from "../entities/FavoriteCardTypes";
+import { FavoriteCardTypes } from "../entities/Favorite";
 
 class HouseStore {
   cards: FavoriteCardTypes[] = [];
@@ -41,11 +41,12 @@ class HouseStore {
   }
 
   toggleFavorite(id: string) {
-    const card = this.cards.find((card) => card.id === id);
-    if (card) {
-      if (this.isFavorite(id)) {
-        this.removeFromFavorites(id);
-      } else {
+    const index = this.favorites.findIndex((card) => card.id === id);
+    if (index !== -1) {
+      this.removeFromFavorites(id);
+    } else {
+      const card = this.cards.find((card) => card.id === id);
+      if (card) {
         this.addToFavorites(card);
       }
     }

@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { Favorites } from "./components/Favorites";
+import { Favorites } from "./components/FavoriteCards";
 import { MainLayout } from "./components/MainLayout";
 import { Cards } from "./components/Cards";
 

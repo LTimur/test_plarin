@@ -1,14 +1,14 @@
 import { observer } from "mobx-react";
 import { houseStore } from "../stores/HouseStore";
-import { HouseCard } from "../components/HouseCard";
+import { HouseCard } from "./HouseCard";
 import { Grid, Container, Pagination } from "@mui/material";
 import { useState } from "react";
-import { FavoriteCardTypes } from "../entities/FavoriteCardTypes";
 import { ChangeEvent } from "react";
+
+const cardsPerPage = 12;
 
 export const Favorites = observer(() => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 12;
 
   const handlePageChange = (_event: ChangeEvent<unknown>, page: number) => {
     setCurrentPage(page);
@@ -24,7 +24,7 @@ export const Favorites = observer(() => {
   return (
     <Container maxWidth="lg" style={{ textAlign: "center" }}>
       <Grid container spacing={2} justifyContent="center">
-        {currentCards.map((favoriteCard: FavoriteCardTypes) => (
+        {currentCards.map((favoriteCard) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={favoriteCard.id}>
             <HouseCard
               id={favoriteCard.id}
