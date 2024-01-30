@@ -9,15 +9,15 @@ import {
 import { Star } from "@mui/icons-material";
 import { houseStore } from "../stores/HouseStore";
 import { useState } from "react";
+import { HouseCardTypes } from "../entities/HouseCardTypes";
 
-export interface HouseCardProps {
-  name: string;
-  region: string;
-  founded: string;
-  coatOfArms: string;
-}
-
-export function HouseCard({ id, name, region, founded, coatOfArms }) {
+export function HouseCard({
+  id,
+  name,
+  region,
+  founded,
+  coatOfArms,
+}: HouseCardTypes) {
   const [isFavorite, setIsFavorite] = useState(houseStore.isFavorite(id));
   const toggleFavorite = () => {
     houseStore.toggleFavorite(id);

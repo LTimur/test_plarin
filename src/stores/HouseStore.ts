@@ -1,8 +1,9 @@
 import { makeAutoObservable, runInAction } from "mobx";
+import { FavoriteCardTypes } from "../entities/FavoriteCardTypes";
 
 class HouseStore {
-  cards = [];
-  favorites = [];
+  cards: FavoriteCardTypes[] = [];
+  favorites: FavoriteCardTypes[] = [];
   currentPage = 1;
 
   constructor() {
@@ -10,10 +11,10 @@ class HouseStore {
     this.loadFavoritesFromLocalStorage();
   }
 
-  setCards(cards) {
+  setCards(cards: FavoriteCardTypes[]) {
     runInAction(() => {
       this.cards = cards
-        .map((card) => ({
+        .map((card: FavoriteCardTypes) => ({
           ...card,
           id: card.url.split("/").pop(),
           isFavorite: this.isFavorite(card.url.split("/").pop()),
@@ -25,8 +26,8 @@ class HouseStore {
     });
   }
 
-  addToFavorites(card) {
-    const existingCard = this.favorites.find((c) => c.id === card.id);
+  addToFavorites(card: FavoriteCardTypes) {
+    const existingCard = this.favorites.find((card: FavoriteCardTypes) => card.id === card.id);
     if (!existingCard) {
       runInAction(() => {
         this.favorites.push(card);
@@ -35,12 +36,12 @@ class HouseStore {
     }
   }
 
-  isFavorite(id) {
-    return this.favorites.some((card) => card.id === id);
+  isFavorite(id: string) {
+    return this.favorites.some((card: FavoriteCardTypes) => card.id === id);
   }
 
-  toggleFavorite(id) {
-    const card = this.cards.find((card) => card.id === id);
+  toggleFavorite(id: string) {
+    const card = this.cards.find((card: FavoriteCardTypes) => card.id === id);
     if (card) {
       if (this.isFavorite(id)) {
         this.removeFromFavorites(id);
@@ -50,8 +51,8 @@ class HouseStore {
     }
   }
 
-  removeFromFavorites(id) {
-    const index = this.favorites.findIndex((card) => card.id === id);
+  removeFromFavorites(id: string) {
+    const index = this.favorites.findIndex((card: FavoriteCardTypes) => card.id === id);
     if (index !== -1) {
       runInAction(() => {
         this.favorites.splice(index, 1);

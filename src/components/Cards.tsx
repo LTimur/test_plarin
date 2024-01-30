@@ -5,13 +5,14 @@ import { HouseCard } from "../components/HouseCard";
 import { Grid, Container, Button } from "@mui/material";
 import { useEffect } from "react";
 import { action } from "mobx";
+import { HouseCardTypes } from "../entities/HouseCardTypes";
 
 export const Cards = observer(() => {
   useEffect(() => {
     loadPage(houseStore.currentPage);
   }, []);
 
-  const loadPage = async (page) => {
+  const loadPage = async (page: number) => {
     try {
       const housesResult = await api.getHouses(page);
       action(() => {
@@ -39,7 +40,7 @@ export const Cards = observer(() => {
     <>
       <Container maxWidth="lg" style={{ textAlign: "center" }}>
         <Grid container spacing={2} justifyContent="center" marginBottom="1rem">
-          {houseStore.cards.map((card) => (
+          {houseStore.cards.map((card: HouseCardTypes) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={card.id}>
               <HouseCard
                 id={card.id}
