@@ -1,10 +1,10 @@
 import { observer } from "mobx-react";
 import { houseStore } from "../stores/HouseStore";
-import { api } from "../api";
 import { HouseCard } from "../components/HouseCard";
 import { Grid, Container, Button } from "@mui/material";
 import { useEffect } from "react";
 import { action } from "mobx";
+import { api } from "../api";
 
 const loadPage = async (page: number) => {
   try {
