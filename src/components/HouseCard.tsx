@@ -18,9 +18,9 @@ export function HouseCard({
   founded,
   coatOfArms,
 }: HouseCardTypes) {
-  const [isFavorite, setIsFavorite] = useState(houseStore.isFavorite(id));
+  const [isFavorite, setIsFavorite] = useState(houseStore.isFavorite(id!));
   const toggleFavorite = () => {
-    houseStore.toggleFavorite(id);
+    houseStore.toggleFavorite(id!);
     setIsFavorite(!isFavorite);
   };
 
