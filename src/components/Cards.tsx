@@ -4,7 +4,7 @@ import { HouseCard } from "../components/HouseCard";
 import { Grid, Container, Button } from "@mui/material";
 import { useEffect } from "react";
 import { action } from "mobx";
-import { api } from "../api";
+import { api } from "../Api";
 
 const loadPage = async (page: number) => {
   try {
