@@ -58,7 +58,7 @@ To run this project locally, follow these steps:
 
   - `entities/`: Defines TypeScript models.
 
-  - `store/`: MobX state management stores.
+  - `stores/`: MobX state management stores.
 
 ## Deployment 
 
