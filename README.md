@@ -7,7 +7,8 @@ Welcome to the Game of Thrones Encyclopedia, a React application that serves as 
 - Explore information about different houses in Game of Thrones.
 - View houses in a grid layout.
 - Mark your favorite houses with a star button.
-- Persistent storage for favorite houses in the "Favorites" page.
+- Your favorite houses are saved locally using localStorage, so they will persist even if you close the application or refresh the page.
+- View your saved favorite houses on the "Favorites" page.
 - Utilizes Mobx for state management.
 - Styled using Material-UI.
 - Data fetched from the An API of Ice and Fire.
